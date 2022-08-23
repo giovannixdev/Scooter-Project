@@ -17,7 +17,7 @@ class ScooterApp {
       }
     }
     if (user.age < 18) {
-      console.log("too young to register!")
+      throw new Error ("too young to register!")
       return
     }
     this.registeredUsers.push(user)
@@ -35,9 +35,9 @@ class ScooterApp {
       }
     }
     if (!user || user.password != password) {
-      // throw new Error ('Username or password are incorrect')
-      console.log('Username or password are incorrect')
-      return
+      throw new Error ('Username or password are incorrect')
+      // console.log('Username or password are incorrect')
+      // return
     }
     console.log('user has logged in successfully')
   }
@@ -63,8 +63,8 @@ class ScooterApp {
         return
       } 
     }
-    // throw new Error ('scooter has not previously been added')
-    console.log('scooter has not previously been added')
+    throw new Error ('scooter has not previously been added')
+    // console.log('scooter has not previously been added')
   }
 }
 
